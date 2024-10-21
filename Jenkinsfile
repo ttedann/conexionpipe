@@ -12,7 +12,7 @@ pipeline {
                 // Ejecuta el comando Maven para compilar el proyecto
                 script {
                     def mvnHome = tool name: 'Maven', type: 'hudson.tasks.Maven$MavenInstallation'
-                    sh "${mvnHome}/bin/mvn clean install"
+                    bat "\"${mvnHome}\\bin\\mvn\" clean install"
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
                 // Ejecuta los tests del proyecto usando Maven
                 script {
                     def mvnHome = tool name: 'Maven', type: 'hudson.tasks.Maven$MavenInstallation'
-                    sh "${mvnHome}/bin/mvn test"
+                    bat "\"${mvnHome}\\bin\\mvn\" test"
                 }
             }
         }
